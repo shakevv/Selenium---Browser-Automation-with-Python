@@ -1,5 +1,5 @@
 #This example opens github.com, searches for my nickname, go to users and find my profile, opens Selenium---Browser-Automation-with-Python repo then opens itself.
-#You have to install Selenium and webdriver for your version of Chrome(or another browser) and set the PATH to be driver directory.
+#You have to install Selenium and webdriver for your version of Chrome(or another browser) and set the PATH to be the driver directory.
 
 from selenium.webdriver.common.keys import Keys
 from selenium import webdriver
