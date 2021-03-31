@@ -1,1 +1,40 @@
-.
+#This example opens github.com, searches for my nickname, go to users and find my profile, opens Selenium---Browser-Automation-with-Python repo and then opens itself.
+
+from selenium.webdriver.common.keys import Keys
+from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait as W
+from selenium.webdriver.support import expected_conditions as E
+from selenium.webdriver.common.by import By
+import time
+
+PATH = "C:\chromedriver_win32\chromedriver.exe"
+wait_time = 5
+
+driver = webdriver.Chrome(PATH)
+wait = W(driver, wait_time)
+
+driver.get("https://github.com/")
+driver.maximize_window()
+element = wait.until(E.presence_of_element_located((By.NAME, "q")))
+element.send_keys("shakevv")
+element.send_keys(Keys.RETURN)
+time.sleep(1)
+
+element = wait.until(E.presence_of_element_located((By.PARTIAL_LINK_TEXT, "Users")))
+element.click()
+time.sleep(1)
+
+element = wait.until(E.presence_of_element_located((By.CSS_SELECTOR, "#user_search_results > div > div:nth-child(1) > div.flex-auto > div:nth-child(1) > div.f4.text-normal > a > em")))
+element.click()
+time.sleep(1)
+
+element = wait.until(E.presence_of_element_located((By.LINK_TEXT, "Selenium---Browser-Automation-with-Python")))
+element.click()
+time.sleep(1)
+
+element = wait.until(E.presence_of_element_located((By.LINK_TEXT, "Simple Example")))
+element.click()
+time.sleep(5)
+
+driver.quit()
+
