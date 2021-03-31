@@ -26,7 +26,8 @@ element = wait.until(E.presence_of_element_located((By.PARTIAL_LINK_TEXT, "Users
 element.click()
 time.sleep(1)
 
-element = wait.until(E.presence_of_element_located((By.CSS_SELECTOR, "#user_search_results > div > div:nth-child(1) > div.flex-auto > div:nth-child(1) > div.f4.text-normal > a > em")))
+element = wait.until(E.presence_of_element_located((By.CSS_SELECTOR,
+"#user_search_results > div > div:nth-child(1) > div.flex-auto > div:nth-child(1) > div.f4.text-normal > a > em")))
 element.click()
 time.sleep(1)
 driver.execute_script("window.scrollBy(0, 100)", "")
